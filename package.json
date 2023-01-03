@@ -1,0 +1,43 @@
+{
+	"name": "react-what-changed",
+	"version": "1.0.0",
+	"description": "React What Changed - track which dependency changed between cycles",
+	"license": "Apache 2.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest"
+	},
+	"devDependencies": {
+		"@tsconfig/recommended": "^1.0.1",
+		"@types/jest": "^27.5.2",
+		"jest": "^27.5.1",
+		"ts-jest": "^27.1.5",
+		"typescript": "^4.8.4"
+	},
+	"engines": {
+		"node": ">=13.0.0"
+	},
+	"keywords": [
+		"React What Changed",
+		"dependency change",
+		"dependencies change"
+	],
+	"author": "Noam Lin",
+	"contributors": [
+		"Noam Lin <noamlin@gmail.com>"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/noamlin/react-what-changed"
+	},
+	"babel": {},
+	"browserslist": [
+		"last 1 Chrome version"
+	],
+	"files": [
+		"package.json",
+		"readme.md",
+		"LICENSE",
+		"index.ts"
+	]
+}
