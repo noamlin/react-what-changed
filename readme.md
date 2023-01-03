@@ -24,11 +24,10 @@ function MyComponent(props) {
     const [somePrimitive, setSomePrimitive] = useState(123);
     const someArray = useSomeArray();
     const someObject = useMemo(() => {
-        return {};
+        return { person: { name: 'John', age: 99 } };
     }, [someArray]);
-
     ...
-
+    ...
     return <div></div>;
 }
 ```
@@ -62,9 +61,25 @@ useEffect(() => {
 
 #### Example #4: log with dependencies names
 ```
+// Instead of:
 useEffect(() => {
     someLogic();
-}, RWC({ primitive: somePrimitive, arr: someArray, obj: someObject });
+}, RWC([
+    somePrimitive,
+    someArray,
+    someObject.person.name,
+    someObject.person.age,
+]);
+
+// Do this:
+useEffect(() => {
+    someLogic();
+}, RWC({
+    primitive: somePrimitive,
+    arr: someArray,
+    name: someObject.person.name,
+    age: someObject.person.age,
+});
 ```
 
 ### License
