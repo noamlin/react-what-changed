@@ -1,6 +1,6 @@
 {
 	"extends": "@tsconfig/recommended/tsconfig.json",
-	"include": ["index.ts"],
+	"include": ["index.ts", "tests/*.ts"],
 	"compilerOptions": {
 		"target": "ES2018",
 		"noImplicitAny": false,
