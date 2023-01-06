@@ -5,7 +5,8 @@
 	"license": "Apache 2.0",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest"
+		"test": "jest",
+		"ts:compile": "tsc"
 	},
 	"devDependencies": {
 		"@tsconfig/recommended": "^1.0.1",

@@ -51,10 +51,12 @@ useEffect(() => {
 useEffect(() => {
     someLogic();
 }, RWC([somePrimitive], false, 'id_1'));
-useEffect(() => {
+
+useMemo(() => {
     someLogic();
 }, RWC([someArray], false, 'id_2'));
-useEffect(() => {
+
+useCallback(() => {
     someLogic();
 }, RWC([someObject], false, 'id_3'));
 ```
