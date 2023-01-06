@@ -129,7 +129,6 @@ import { whatDiff } from 'react-what-changed';
 ```
 
 ### Examples
-Let's use the same component from reactWhatChanged example.
 
 Example #1: log the diffs between 2 objects
 ```
@@ -138,6 +137,8 @@ const obj1 = { name: 'John', address: { city: 'New York' } };
 const obj2 = { name: 'John', address: { city: 'Paris' } };
 WD(obj1, obj2);
 ```
+
+Let's use the same component from reactWhatChanged example.
 
 Example #2: simple log in a react component
 ```
