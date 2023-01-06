@@ -1,6 +1,6 @@
 {
 	"name": "react-what-changed",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "React What Changed - track which dependency changed between cycles",
 	"license": "Apache 2.0",
 	"main": "index.js",
