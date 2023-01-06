@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WD = exports.whatDiff = exports.RWD = exports.reactWhatDiff = exports.RWC = exports.reactWhatChanged = void 0;
+exports.whatDiff = exports.reactWhatDiff = exports.reactWhatChanged = void 0;
 /** is pojo or array */
 function isObj(obj) {
     return typeof obj === 'object' && obj !== null;
@@ -75,7 +75,6 @@ const reactWhatChanged = function reactWhatChanged(dependencies, verbose = false
     }
 };
 exports.reactWhatChanged = reactWhatChanged;
-exports.RWC = exports.reactWhatChanged;
 function diffsPush(diffs, path, oldValue, newValue) {
     diffs.push({
         path,
@@ -162,7 +161,6 @@ const reactWhatDiff = function reactWhatDiff(obj, id) {
     return obj;
 };
 exports.reactWhatDiff = reactWhatDiff;
-exports.RWD = exports.reactWhatDiff;
 /**
  * compare (deep comparison) two objects/arrays
  * and print a detailed list of all property changes
@@ -175,4 +173,3 @@ const whatDiff = function whatDiff(newObj, prevObj) {
     return (0, exports.reactWhatDiff)(newObj, id);
 };
 exports.whatDiff = whatDiff;
-exports.WD = exports.whatDiff;

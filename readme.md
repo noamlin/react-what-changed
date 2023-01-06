@@ -3,23 +3,29 @@
 An efficient and simple library to show which dependency changed in a hook between react cycles.
 
 ## Installation
-
 ```
 npm install react-what-changed --save-dev
 ```
 
-## Usage
+## API
+* [reactWhatChanged](#reactWhatChanged)
+* [reactWhatDiff](#reactWhatDiff)
+* [whatDiff](#whatDiff)
+
+## reactWhatChanged
+
+### Description
+invoke this function again and again on each react's cycle to print which dependency has changed
 
 ### Import
-
 ```
-import RWC from 'react-what-changed';
+import { reactWhatChanged } from 'react-what-changed';
 ```
 
 ### Examples
-
-#### Let's say we have the following component
+Let's say we have the following component
 ```
+import { reactWhatChanged as RWC } from 'react-what-changed';
 function MyComponent(props) {
     const [somePrimitive, setSomePrimitive] = useState(123);
     const someArray = useSomeArray();
@@ -32,21 +38,21 @@ function MyComponent(props) {
 }
 ```
 
-#### Example #1: simplest log as array
+Example #1: simplest log as array
 ```
 useEffect(() => {
     someLogic();
 }, RWC([somePrimitive, someArray, someObject]));
 ```
 
-#### Example #2: verbose log as array
+Example #2: verbose log as array
 ```
 useEffect(() => {
     someLogic();
 }, RWC([somePrimitive, someArray, someObject], true));
 ```
 
-#### Example #3: use ID for several logs
+Example #3: use ID for several logs
 ```
 useEffect(() => {
     someLogic();
@@ -61,7 +67,7 @@ useCallback(() => {
 }, RWC([someObject], false, 'id_3'));
 ```
 
-#### Example #4: log with dependencies names
+Example #4: log with dependencies names
 ```
 // Instead of:
 useEffect(() => {
@@ -82,6 +88,62 @@ useEffect(() => {
     name: someObject.person.name,
     age: someObject.person.age,
 });
+```
+
+## reactWhatDiff
+
+### Description
+invoke this function again and again on an object (or array) to print all changes (deep comparison)
+
+### Import
+```
+import { reactWhatDiff } from 'react-what-changed';
+```
+
+### Examples
+Let's use the same component from reactWhatChanged example.
+
+Example #1: simple log
+```
+import { reactWhatDiff as RWD } from 'react-what-changed';
+useEffect(() => {
+    someLogic();
+}, [somePrimitive, someArray, RWD(someObject)]);
+```
+
+Example #2: use ID for several logs
+```
+useEffect(() => {
+    someLogic();
+}, [somePrimitive, RWD(someArray, 'id_1'), RWD(someObject, 'id_2')]);
+```
+
+## whatDiff
+
+### Description
+print all changes (deep comparison) between 2 objects (or arrays)
+
+### Import
+```
+import { whatDiff } from 'react-what-changed';
+```
+
+### Examples
+Let's use the same component from reactWhatChanged example.
+
+Example #1: log the diffs between 2 objects
+```
+import { whatDiff as WD } from 'react-what-changed';
+const obj1 = { name: 'John', address: { city: 'New York' } };
+const obj2 = { name: 'John', address: { city: 'Paris' } };
+WD(obj1, obj2);
+```
+
+Example #2: simple log in a react component
+```
+const originalObject = useRef(someObject);
+someLogic();
+WD(someObject, originalObject.current);
 ```
 
 ### License

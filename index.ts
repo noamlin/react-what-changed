@@ -88,7 +88,6 @@ export const reactWhatChanged = function reactWhatChanged(
         return [];
     }
 }
-export const RWC = reactWhatChanged;
 
 function diffsPush(diffs: Diffs, path: string, oldValue: any, newValue: any) {
     diffs.push({
@@ -183,7 +182,6 @@ export const reactWhatDiff = function reactWhatDiff(
 
     return obj;
 }
-export const RWD = reactWhatDiff;
 
 /**
  * compare (deep comparison) two objects/arrays
@@ -201,4 +199,3 @@ export const whatDiff = function whatDiff(
     
     return reactWhatDiff(newObj, id);
 }
-export const WD = whatDiff;

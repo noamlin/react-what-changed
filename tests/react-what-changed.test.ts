@@ -1,4 +1,4 @@
-import { RWC } from '..';
+import { reactWhatChanged as RWC } from '..';
 
 const arr1old = [0, 1, 2];
 const arr1new = [0, 'a', 2];
