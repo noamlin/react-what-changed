@@ -148,4 +148,4 @@ WD(someObject, originalObject.current);
 ```
 
 ### License
-Proxserve is [APACHE-2.0 licensed](https://www.apache.org/licenses/LICENSE-2.0).
+React What Changed is [APACHE-2.0 licensed](https://www.apache.org/licenses/LICENSE-2.0).
